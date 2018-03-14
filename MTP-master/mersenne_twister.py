@@ -40,8 +40,22 @@ class mersenne_rng(object):
 
     def int_32(self, number):
         return int(0xFFFFFFFF & number)
+        
 
-if __name__ == "__main__":
-    rng = mersenne_rng(1131464071)
-    for i in range(10):
-        print rng.get_random_number()
+def get_array(rango):
+    rng = mersenne_rng(2048)
+    array_numb = []
+    for i in range(40):
+        num = rng.get_random_number()
+        array_numb.append(num)
+        # print num
+    return array_numb
+    
+# if __name__ == "__main__":
+#     rng = mersenne_rng(1131464071)
+#     array_numb = []
+#     for i in range(40):
+#         num = rng.get_random_number()
+#         array_numb.append(num)
+#         print num
+#     return array_numb
