@@ -45,7 +45,7 @@ class mersenne_rng(object):
 def get_array(rango):
     rng = mersenne_rng(2048)
     array_numb = []
-    for i in range(40):
+    for i in range(rango):
         num = rng.get_random_number()
         array_numb.append(num)
         # print num

@@ -3,30 +3,56 @@
 from mersenne_twister import get_array
 listanumeros = get_array(40)
 
-# print(listanumeros)
-
-sumas = [0,0,0,0,0,0,0,0]
-for i in range(len(listanumeros)):
-	listanumeros[i]=listanumeros[i]/float(pow(2, 32))
-	if listanumeros[i]>=0 and listanumeros[i]<0.125:
-		sumas[0]+=1
-	elif listanumeros[i]>=0.125 and listanumeros[i]<0.25:
-		sumas[1]+=1
-	elif listanumeros[i]>=0.25 and listanumeros[i]<0.375:
-		sumas[2]+=1
-	elif listanumeros[i]>=0.375 and listanumeros[i]<0.5:
-		sumas[3]+=1
-	elif listanumeros[i]>=0.5 and listanumeros[i]<0.625:
-		sumas[4]+=1
-	elif listanumeros[i]>=0.625 and listanumeros[i]<0.75:
-		sumas[5]+=1
-	elif listanumeros[i]>=0.75 and listanumeros[i]<0.875:
-		sumas[6]+=1
-	elif listanumeros[i]>=0.875 and listanumeros[i]<1:
-		sumas[7]+=1
 print(listanumeros)
-print(sumas)
-resultado=0
-for x in sumas:
-	resultado+= (pow(5-x,2))/5
+
+
+##PUNTO 1
+# sumas = [0,0,0,0,0,0,0,0]
+# for i in range(len(listanumeros)):
+# 	listanumeros[i]=listanumeros[i]/float(pow(2, 32))
+# 	if listanumeros[i]>=0 and listanumeros[i]<0.125:
+# 		sumas[0]+=1
+# 	elif listanumeros[i]>=0.125 and listanumeros[i]<0.25:
+# 		sumas[1]+=1
+# 	elif listanumeros[i]>=0.25 and listanumeros[i]<0.375:
+# 		sumas[2]+=1
+# 	elif listanumeros[i]>=0.375 and listanumeros[i]<0.5:
+# 		sumas[3]+=1
+# 	elif listanumeros[i]>=0.5 and listanumeros[i]<0.625:
+# 		sumas[4]+=1
+# 	elif listanumeros[i]>=0.625 and listanumeros[i]<0.75:
+# 		sumas[5]+=1
+# 	elif listanumeros[i]>=0.75 and listanumeros[i]<0.875:
+# 		sumas[6]+=1
+# 	elif listanumeros[i]>=0.875 and listanumeros[i]<1:
+# 		sumas[7]+=1
+# #print(listanumeros)
+# print(sumas)
+# resultado=0
+# for x in sumas:
+# 	resultado+= (pow(5-x,2))/5
 # print(resultado)
+
+
+##PUNTO 3
+
+resultado = [0,0]
+estado = ""
+
+for i in range(len(listanumeros)-1):
+	if(listanumeros[i] < listanumeros[i +1]):
+		resultado[0] += 1
+		estado = "subio"
+	elif(listanumeros[i] > listanumeros[i +1]):
+		resultado[1] += 1
+		estado = "bajo"		
+	else:
+		if(estado == "subio"):
+			resultado[0] += 1
+		elif(estado == "bajo"):
+			resultado[1] += 1
+				
+
+print(resultado)		
+
+
