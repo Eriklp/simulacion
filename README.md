@@ -17,4 +17,12 @@ To generate a random number:
 ```
 random_number = generator.get_random_number()
 ```
-# simulacion
+# TALLER 1 simulacion
+Script auxiliar Taller 1 Simulacion Computacional
+```
+Camilo José Cruz Rivera
+```
+Erik Lopez Pacheco
+```
+Jesus Alberto Ramirez Otalvaro
+
