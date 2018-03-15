@@ -38,8 +38,11 @@ print(listanumeros)
 
 resultado = [0,0]
 estado = ""
+corridas = 0
+estados = []
 
 for i in range(len(listanumeros)-1):
+	
 	if(listanumeros[i] < listanumeros[i +1]):
 		resultado[0] += 1
 		estado = "subio"
@@ -51,8 +54,13 @@ for i in range(len(listanumeros)-1):
 			resultado[0] += 1
 		elif(estado == "bajo"):
 			resultado[1] += 1
-				
-
+	estados.append(estado)
+	
 print(resultado)		
 
+for i in range(len(estados)-1):
+	if(estados[i] != estados[i+1]):
+		corridas += 1
 
+
+print corridas
